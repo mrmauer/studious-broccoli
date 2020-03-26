@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Tool Prototype 3/25/2020</h1>
+
+    <form action="/tool" method="GET">
+      <label for="subject">Subject:</label><br>
+      <input type="text" id="subject" name="subject"><br>
+      <input type="radio" id="positive" name="sentiment" value="positive">
+      <label for="positive">Positive</label><br>
+      <input type="radio" id="negative" name="sentiment" value="negative">
+      <label for="negative">Negative</label><br>
+      <input type="submit" value="Map it!">
+    </form>
+
+    <div class="mapouter">
+        <div>
+            <iframe width="1200" height="600" id="gmap_canvas" src={{query}} frameborder="0" scrolling="yes" marginheight="0" marginwidth="0"></iframe></div>
+        <style>.mapouter{position:relative;text-align:right;height:600px;width:1200px;}.gmap_canvas {overflow:hidden;background:none!important;height:600px;width:1200px;}
+        </style>    
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>About the Xu Initiative</h1>
+    <p>
+        This is a prototype data analysis tool using GDELT data to 
+        understand how frequently a subject is mentioned in the news in 
+        different countries.
+        An user may search news stories with either a generally positive or 
+        negative tone. The result is a chloropleth map where the darker shaded 
+        countries/regions report a higher relative ratio of news stories 
+        that match the criteria. Only stories published within the last 24 hours
+        are used for the analysis. The user may select a country and follow 
+        the embedded link to read a matching news story.
+
+    </p>
+    <form action="/tool" method="GET">
+      <label for="subject">Subject:</label><br>
+      <input type="text" id="subject" name="subject"><br>
+      <input type="radio" id="positive" name="sentiment" value="positive">
+      <label for="positive">Positive</label><br>
+      <input type="radio" id="negative" name="sentiment" value="negative">
+      <label for="negative">Negative</label><br>
+      <input type="submit" value="Map it!">
+    </form>
+{% endblock %}
